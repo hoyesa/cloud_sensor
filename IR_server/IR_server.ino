@@ -99,13 +99,15 @@ void printWEB(Adafruit_MLX90614 mlx) {
             client.println("HTTP/1.1 200 OK");
             client.println("Content-type:text/html");
             client.println();
-           
-            //create the buttons
-            client.print("Click <a href=\"/H\">here</a> turn the LED on<br>");
-            client.print("Click <a href=\"/L\">here</a> turn the LED off<br><br>");
             
-            int randomReading = analogRead(A1);
-            client.print(String(mlx.readAmbientTempF(),2)+" "+String(mlx.readObjectTempF(),2));
+            //meta-refresh page every 5 seconds
+            //client.print("<HEAD>");
+            //client.print("<meta http-equiv=\"refresh\" content=\"5\">");
+            //client.print("<TITLE />Zoomkat's meta-refresh test</title>");
+            //client.print("</head>");
+
+            client.print("<table><tr><th>Ambient_F</th><th>Object_F</th></tr>");
+            client.print("<tr><td>"+String(mlx.readAmbientTempF(),2)+"</td><td>"+String(mlx.readObjectTempF(),2)+"</td></tr></table>");
 
             // The HTTP response ends with another blank line:
             client.println();
@@ -119,14 +121,6 @@ void printWEB(Adafruit_MLX90614 mlx) {
         else if (c != '\r') {    // if you got anything else but a carriage return character,
           currentLine += c;      // add it to the end of the currentLine
         }
-
-        if (currentLine.endsWith("GET /H")) {
-          client.print("Pin High ");  
-        }
-        if (currentLine.endsWith("GET /L")) {
-          client.print("Pin Low ");
-        }
-
       }
     }
     // close the connection:
