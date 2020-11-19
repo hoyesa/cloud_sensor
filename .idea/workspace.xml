@@ -4,6 +4,8 @@
     <list default="true" id="4bcfaf8b-ca01-485a-bac2-fc98e8dd6a37" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/IR_server/IR_server.ino" beforeDir="false" afterPath="$PROJECT_DIR$/IR_server/IR_server.ino" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/web_reader.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

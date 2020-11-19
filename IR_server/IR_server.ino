@@ -3,7 +3,7 @@
 
 Adafruit_MLX90614 mlx = Adafruit_MLX90614();
 
-char ssid[] = "NETGEAR06";             //  your network SSID (name) between the " "
+char ssid[] = "Steve_Astro";             //  your network SSID (name) between the " "
 char pass[] = "thirstyraven658";      // your network password between the " "
 int keyIndex = 0;                 // your network key Index number (needed only for WEP)
 int status = WL_IDLE_STATUS;      //connection status
@@ -12,14 +12,14 @@ WiFiServer server(80);            //server socket
 WiFiClient client = server.available();
 
 void setup() {
-  Serial.begin(9600);
-  while (!Serial);
+//  Serial.begin(9600);
+//  while (!Serial);
   
   enable_WiFi();
   connect_WiFi();
 
   server.begin();
-  printWifiStatus();
+//  printWifiStatus();
   
   mlx.begin();
 }
@@ -34,43 +34,43 @@ void loop() {
 
 void printWifiStatus() {
   // print the SSID of the network you're attached to:
-  Serial.print("SSID: ");
-  Serial.println(WiFi.SSID());
+//  Serial.print("SSID: ");
+//  Serial.println(WiFi.SSID());
 
   // print your board's IP address:
-  IPAddress ip = WiFi.localIP();
-  Serial.print("IP Address: ");
-  Serial.println(ip);
+//  IPAddress ip = WiFi.localIP();
+//  Serial.print("IP Address: ");
+//  Serial.println(ip);
 
   // print the received signal strength:
-  long rssi = WiFi.RSSI();
-  Serial.print("signal strength (RSSI):");
-  Serial.print(rssi);
-  Serial.println(" dBm");
-
-  Serial.print("To see this page in action, open a browser to http://");
-  Serial.println(ip);
+//  long rssi = WiFi.RSSI();
+//  Serial.print("signal strength (RSSI):");
+//  Serial.print(rssi);
+//  Serial.println(" dBm");
+//
+//  Serial.print("To see this page in action, open a browser to http://");
+//  Serial.println(ip);
 }
 
 void enable_WiFi() {
   // check for the WiFi module:
   if (WiFi.status() == WL_NO_MODULE) {
-    Serial.println("Communication with WiFi module failed!");
-    // don't continue
+//    Serial.println("Communication with WiFi module failed!");
+//    // don't continue
     while (true);
   }
 
-  String fv = WiFi.firmwareVersion();
-  if (fv < "1.0.0") {
-    Serial.println("Please upgrade the firmware");
-  }
+//  String fv = WiFi.firmwareVersion();
+//  if (fv < "1.0.0") {
+//    Serial.println("Please upgrade the firmware");
+//  }
 }
 
 void connect_WiFi() {
   // attempt to connect to Wifi network:
   while (status != WL_CONNECTED) {
-    Serial.print("Attempting to connect to SSID: ");
-    Serial.println(ssid);
+//    Serial.print("Attempting to connect to SSID: ");
+//    Serial.println(ssid);
     // Connect to WPA/WPA2 network. Change this line if using open or WEP network:
     status = WiFi.begin(ssid, pass);
 
@@ -82,12 +82,12 @@ void connect_WiFi() {
 void printWEB(Adafruit_MLX90614 mlx) {
 
   if (client) {                             // if you get a client,
-    Serial.println("new client");           // print a message out the serial port
+//    Serial.println("new client");           // print a message out the serial port
     String currentLine = "";                // make a String to hold incoming data from the client
     while (client.connected()) {            // loop while the client's connected
       if (client.available()) {             // if there's bytes to read from the client,
         char c = client.read();             // read a byte, then
-        Serial.write(c);                    // print it out the serial monitor
+//        Serial.write(c);                    // print it out the serial monitor
         if (c == '\n') {                    // if the byte is a newline character
 
           // if the current line is blank, you got two newline characters in a row.
@@ -125,6 +125,6 @@ void printWEB(Adafruit_MLX90614 mlx) {
     }
     // close the connection:
     client.stop();
-    Serial.println("client disconnected");
+//    Serial.println("client disconnected");
   }
 }

@@ -2,7 +2,7 @@ from selenium import webdriver
 import time
 import pandas as pd
 
-url = 'http://192.168.0.127'
+url = 'http://192.168.8.236'
 
 refreshrate = 5  # sample rate in seconds
 driver = webdriver.Chrome('C:/Users/hoyes/Documents/libs/chromedriver.exe')
