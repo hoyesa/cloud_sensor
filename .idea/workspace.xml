@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4bcfaf8b-ca01-485a-bac2-fc98e8dd6a37" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IR_server/IR_server.ino" beforeDir="false" afterPath="$PROJECT_DIR$/IR_server/IR_server.ino" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web_reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/web_reader.py" afterDir="false" />
     </list>
@@ -127,12 +126,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/web_reader.py</url>
-          <line>21</line>
+          <line>52</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/web_reader.py</url>
-          <line>19</line>
+          <line>50</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
