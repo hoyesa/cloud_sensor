@@ -16,8 +16,10 @@ refreshrate = 5  # sample rate in seconds
 driver = webdriver.Chrome('C:/Users/hoyes/Documents/libs/chromedriver.exe')
 driver.get(url)
 
+##  csv writer
 rowList = []
-for _ in range(6000):
+
+for sampleCount in range(6000):
     time.sleep(refreshrate)
     driver.refresh()
     table = pd.read_html(driver.page_source,header=0)[0]
@@ -25,6 +27,14 @@ for _ in range(6000):
     rowDict['Diff'] = rowDict['Ambient_F'] - rowDict['Object_F']
     rowDict['DateTime'] = pd.Timestamp.now()
     rowList.append(rowDict)
+    if len(rowList) == 60:
+        print("Writing 60 recs to database")
+        df = pd.DataFrame(rowList)
+        f = open('IR_temp_data.csv', 'a')
+        df.to_csv(f, header=(sampleCount == 0))
+        f.close()
+
+        rowList = []
 
     ## charting
     if rowDict['Ambient_F'] < 150 and rowDict['Object_F'] < 150:
@@ -48,6 +58,3 @@ for _ in range(6000):
         plt.pause(0.1)
 
 plt.show(block=True)  # block=True lets the window stay open at the end of the animation.
-df = pd.DataFrame(rowList)
-
-print(df)
