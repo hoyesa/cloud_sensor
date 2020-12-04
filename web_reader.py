@@ -18,7 +18,7 @@ Required packages:
 
 Settings:                                                                                                         """
 
-url                 = 'http://192.168.8.236'                                    ##  Arduino Web Server with MXL 90614 data
+url                 = 'http://192.168.4.1'                                    ##  Arduino Web Server with MXL 90614 data
 refreshrate         = 5                                                         ##  sample rate in seconds
 chromeDriverPath    = 'C:/Users/hoyes/Documents/libs/chromedriver.exe'          ##  path to Selenium Google Chrome Driver
 csvDataFilename     = 'IR_temp_data.csv'                                        ##  sensor readings are saved to this file
