@@ -10,6 +10,7 @@
 #include <Adafruit_MLX90614.h>
 #include <nRF24L01.h>
 #include <RF24.h>
+#include "printf.h"
 
 Adafruit_MLX90614 mlx = Adafruit_MLX90614();
 
@@ -143,7 +144,9 @@ void setup() {
   if ( SERIAL_GO ) printWiFiStatus();
 
   //  Start the radio
+  printf_begin();
   radio.begin();
+  radio.printDetails();
   radio.openWritingPipe(address);
   radio.setPALevel(RF24_PA_MIN);
   radio.stopListening();
